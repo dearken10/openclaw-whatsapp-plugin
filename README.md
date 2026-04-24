@@ -276,9 +276,13 @@ make send API_KEY=imbee_xxx TEXT="hello"  Send outbound message
 make test                  Run Go tests
 make ngrok                 Start ngrok + register 360dialog webhook
 
+make publish-plugin-local                   Patch ROUTING_BASE_URL into plugin for local dev (no publish)
+make publish-plugin-local BAKE_ENV_FILE=.env.dev  Same, with explicit env file
+make publish-plugin-npm-clawhub             Publish plugin to npm + ClawHub
+make publish-plugin-npm-clawhub ENV_FILE=.env.prod  Publish using prod env
+
 make aws-login             Authenticate with imBee AWS SSO (prod)
 make aws-login DEV=1       Authenticate with imBee AWS SSO (dev)
 make deploy DOMAIN=...     Full deploy to EC2
 make deploy-update DOMAIN=...  Push binary/config to existing instance
-make publish-plugin        Publish plugin to npm + ClawHub
 ```
